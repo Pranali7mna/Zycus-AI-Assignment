@@ -1,0 +1,2 @@
+# Core Tasks 1-3 run with the Python standard library.
+# Optional demo/API extras are listed in requirements-demo.txt.

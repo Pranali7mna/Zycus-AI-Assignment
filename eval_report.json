@@ -1,0 +1,360 @@
+{
+  "passed": 10,
+  "total": 10,
+  "average_score": 1.0,
+  "results": [
+    {
+      "name": "saml_login_loop",
+      "task": "triage",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "product_area": "Authentication",
+        "issue_category": "Outage",
+        "urgency": "P1",
+        "reasoning": [
+          "Matched Authentication signals: sso, saml, login.",
+          "Matched Outage signals: cannot access, all users.",
+          "P1 because the ticket suggests broad outage, security, or data-loss impact."
+        ],
+        "known_issue": {
+          "issue_id": "auth-saml-clock-skew",
+          "title": "SAML clock skew causing login loops",
+          "path": "data/kb/auth-saml-clock-skew.md",
+          "score": 0.263,
+          "snippet": "# SAML clock skew causing login loops Known pattern: users report SSO login loops, invalid SAML assertions, or MFA prompts repeating after IdP changes. Checks: - Confirm IdP and service clocks are"
+        },
+        "responder_team": "Identity Support",
+        "draft_response": "Thanks for the detailed report. We are routing this to Identity Support as a P1 Authentication / Outage case. I found a likely related internal article: SAML clock skew causing login loops. Please share any request IDs, timestamps, affected users, and recent configuration changes so we can confirm impact and next steps."
+      }
+    },
+    {
+      "name": "api_429",
+      "task": "triage",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "product_area": "API",
+        "issue_category": "How-to",
+        "urgency": "P2",
+        "reasoning": [
+          "Matched API signals: api, webhook, 429, endpoint.",
+          "No strong keyword match; defaulted to How-to.",
+          "P2 because the ticket includes executive, renewal, escalation, or launch pressure."
+        ],
+        "known_issue": {
+          "issue_id": "api-rate-limit-429",
+          "title": "API 429 and webhook throttling",
+          "path": "data/kb/api-rate-limit-429.md",
+          "score": 0.232,
+          "snippet": "# API 429 and webhook throttling Known pattern: integrations receive 429 responses, delayed webhooks, or burst traffic failures. Checks: - Compare request bursts with contract limits. - Ask the customer to include"
+        },
+        "responder_team": "Platform API",
+        "draft_response": "Thanks for the detailed report. We are routing this to Platform API as a P2 API / How-to case. I found a likely related internal article: API 429 and webhook throttling. Please share any request IDs, timestamps, affected users, and recent configuration changes so we can confirm impact and next steps."
+      }
+    },
+    {
+      "name": "billing_credit",
+      "task": "triage",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "product_area": "Billing",
+        "issue_category": "Billing Question",
+        "urgency": "P4",
+        "reasoning": [
+          "Matched Billing signals: invoice, charge, credit.",
+          "Matched Billing Question signals: invoice, charge, credits.",
+          "P4 because the request reads as informational or low-impact."
+        ],
+        "known_issue": {
+          "issue_id": "billing-credit-mismatch",
+          "title": "Billing credit mismatch",
+          "path": "data/kb/billing-credit-mismatch.md",
+          "score": 0.412,
+          "snippet": "# Billing credit mismatch Known pattern: invoice total, committed credits, or subscription quantity does not match the contract. Checks: - Compare account entitlement with latest order form. - Do not promise refunds"
+        },
+        "responder_team": "Revenue Operations",
+        "draft_response": "Thanks for the detailed report. We are routing this to Revenue Operations as a P4 Billing / Billing Question case. I found a likely related internal article: Billing credit mismatch. Please share any request IDs, timestamps, affected users, and recent configuration changes so we can confirm impact and next steps."
+      }
+    },
+    {
+      "name": "sync_schema",
+      "task": "triage",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "product_area": "Data Sync",
+        "issue_category": "Bug",
+        "urgency": "P3",
+        "reasoning": [
+          "Matched Data Sync signals: sync, connector, import, warehouse.",
+          "Matched Bug signals: fails.",
+          "P3 because functionality is degraded but no account-wide outage is stated."
+        ],
+        "known_issue": {
+          "issue_id": "sync-schema-drift",
+          "title": "Data sync failures after schema drift",
+          "path": "data/kb/sync-schema-drift.md",
+          "score": 0.415,
+          "snippet": "# Data sync failures after schema drift Known pattern: connector imports fail after new columns, type changes, or warehouse permission changes. Checks: - Run connector dry-run validation. - Ask for the failing"
+        },
+        "responder_team": "Data Platform",
+        "draft_response": "Thanks for the detailed report. We are routing this to Data Platform as a P3 Data Sync / Bug case. I found a likely related internal article: Data sync failures after schema drift. Please share any request IDs, timestamps, affected users, and recent configuration changes so we can confirm impact and next steps."
+      }
+    },
+    {
+      "name": "adversarial_ambiguous",
+      "task": "triage",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "product_area": "API",
+        "issue_category": "How-to",
+        "urgency": "P4",
+        "reasoning": [
+          "No strong keyword match; defaulted to API.",
+          "No strong keyword match; defaulted to How-to.",
+          "P4 because the request reads as informational or low-impact."
+        ],
+        "known_issue": null,
+        "responder_team": "Platform API",
+        "draft_response": "Thanks for the detailed report. We are routing this to Platform API as a P4 API / How-to case. Please share any request IDs, timestamps, affected users, and recent configuration changes so we can confirm impact and next steps."
+      }
+    },
+    {
+      "name": "account_exists",
+      "task": "brief",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "account_id": "ACCT-001",
+        "executive_summary": "Customer 001 is a Enterprise account with $125,000 ARR and yellow health. The current success plan is to expand API usage into workflow automation. There are 8 tickets in the last 90 days, with Data Sync appearing most often. Renewal is scheduled for 2026-08-08, so the TAM should connect support progress to renewal confidence.",
+        "open_risks": [
+          "Account health is yellow.",
+          "3 tickets remain open or pending in the last 90 days.",
+          "6 recent tickets include churn, escalation, or production-impact language."
+        ],
+        "flagged_issues": [
+          {
+            "ticket_id": "TCK-0102",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0347",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0070",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          },
+          {
+            "ticket_id": "TCK-0125",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          },
+          {
+            "ticket_id": "TCK-0228",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          },
+          {
+            "ticket_id": "TCK-0336",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          }
+        ],
+        "recommended_talking_points": [
+          "Open by acknowledging the success plan: Expand API usage into workflow automation.",
+          "Review the 3 active support items and agree on owners for the highest-impact cases.",
+          "Ask whether any support issue is influencing renewal, expansion, or executive sentiment.",
+          "Discuss whether recurring Data Sync issues need enablement, configuration review, or roadmap feedback."
+        ],
+        "ticket_count_90d": 8
+      }
+    },
+    {
+      "name": "flags_have_quotes",
+      "task": "brief",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "account_id": "ACCT-002",
+        "executive_summary": "Customer 002 is a Enterprise account with $45,000 ARR and yellow health. The current success plan is to expand API usage into workflow automation. There are 9 tickets in the last 90 days, with Analytics appearing most often. Renewal is scheduled for 2026-07-07, so the TAM should connect support progress to renewal confidence.",
+        "open_risks": [
+          "Account health is yellow.",
+          "7 tickets remain open or pending in the last 90 days.",
+          "5 recent tickets include churn, escalation, or production-impact language."
+        ],
+        "flagged_issues": [
+          {
+            "ticket_id": "TCK-0002",
+            "category": "Churn risk",
+            "quote": "We are seeing renewal behavior in schema.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0066",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0118",
+            "category": "Churn risk",
+            "quote": "We are seeing renewal behavior in dashboard.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0408",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0452",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          }
+        ],
+        "recommended_talking_points": [
+          "Open by acknowledging the success plan: Expand API usage into workflow automation.",
+          "Review the 7 active support items and agree on owners for the highest-impact cases.",
+          "Ask whether any support issue is influencing renewal, expansion, or executive sentiment.",
+          "Discuss whether recurring Analytics issues need enablement, configuration review, or roadmap feedback."
+        ],
+        "ticket_count_90d": 9
+      }
+    },
+    {
+      "name": "deterministic",
+      "task": "brief",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "account_id": "ACCT-003",
+        "executive_summary": "Customer 003 is a Startup account with $500,000 ARR and yellow health. The current success plan is to complete SSO rollout for all business units. There are 3 tickets in the last 90 days, with Authentication appearing most often. Renewal is scheduled for 2026-10-08, so the TAM should connect support progress to renewal confidence.",
+        "open_risks": [
+          "Account health is yellow.",
+          "3 tickets remain open or pending in the last 90 days.",
+          "2 recent tickets include churn, escalation, or production-impact language."
+        ],
+        "flagged_issues": [
+          {
+            "ticket_id": "TCK-0358",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0167",
+            "category": "Executive escalation",
+            "quote": "This is blocking our production launch and leadership is asking for an ETA.",
+            "reason": "Ticket contains executive escalation language."
+          }
+        ],
+        "recommended_talking_points": [
+          "Open by acknowledging the success plan: Complete SSO rollout for all business units.",
+          "Review the 3 active support items and agree on owners for the highest-impact cases.",
+          "Ask whether any support issue is influencing renewal, expansion, or executive sentiment.",
+          "Discuss whether recurring Authentication issues need enablement, configuration review, or roadmap feedback."
+        ],
+        "ticket_count_90d": 3
+      }
+    },
+    {
+      "name": "active_risks",
+      "task": "brief",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "account_id": "ACCT-004",
+        "executive_summary": "Customer 004 is a Enterprise account with $250,000 ARR and yellow health. The current success plan is to stabilize executive dashboards before renewal. There are 8 tickets in the last 90 days, with API appearing most often. Renewal is scheduled for 2026-09-09, so the TAM should connect support progress to renewal confidence.",
+        "open_risks": [
+          "Account health is yellow.",
+          "6 tickets remain open or pending in the last 90 days.",
+          "7 recent tickets include churn, escalation, or production-impact language."
+        ],
+        "flagged_issues": [
+          {
+            "ticket_id": "TCK-0200",
+            "category": "Churn risk",
+            "quote": "We are seeing renewal behavior in webhook.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0272",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0325",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0376",
+            "category": "Churn risk",
+            "quote": "If this is not resolved before renewal we will evaluate alternatives.",
+            "reason": "Ticket contains churn risk language."
+          },
+          {
+            "ticket_id": "TCK-0079",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          },
+          {
+            "ticket_id": "TCK-0122",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          },
+          {
+            "ticket_id": "TCK-0366",
+            "category": "Executive escalation",
+            "quote": "Our VP asked to escalate because the issue affects all users.",
+            "reason": "Ticket contains executive escalation language."
+          }
+        ],
+        "recommended_talking_points": [
+          "Open by acknowledging the success plan: Stabilize executive dashboards before renewal.",
+          "Review the 6 active support items and agree on owners for the highest-impact cases.",
+          "Ask whether any support issue is influencing renewal, expansion, or executive sentiment.",
+          "Discuss whether recurring API issues need enablement, configuration review, or roadmap feedback."
+        ],
+        "ticket_count_90d": 8
+      }
+    },
+    {
+      "name": "adversarial_missing_account",
+      "task": "brief",
+      "score": 1.0,
+      "passed": true,
+      "output": {
+        "account_id": "ACCT-999",
+        "executive_summary": "No account summary was found. Treat this as incomplete data and confirm the account ID before the QBR.",
+        "open_risks": [
+          "Incomplete account data: account ID not present in the mock dataset."
+        ],
+        "flagged_issues": [],
+        "recommended_talking_points": [
+          "Confirm ownership, renewal timing, and active support issues with the TAM ops team."
+        ],
+        "ticket_count_90d": 0
+      }
+    }
+  ]
+}
